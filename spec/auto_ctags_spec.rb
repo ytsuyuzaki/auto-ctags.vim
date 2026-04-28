@@ -4,7 +4,7 @@ def file_exist(file)
   sleep 0.05
   # p "Dir current"
   # p Dir.glob("**/*")
-  File.exist?(file).should be_true
+  expect(File.exist?(file)).to be(true)
   File.delete(file)
 end
 

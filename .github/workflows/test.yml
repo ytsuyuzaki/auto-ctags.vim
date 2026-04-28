@@ -3,7 +3,7 @@ name: Test
 on:
   push:
     branches:
-      - '**'
+      - "master"
   pull_request:
 
 jobs:
@@ -11,5 +11,26 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
+      - name: Set up Ruby
+        uses: ruby/setup-ruby@v1
+        with:
+          ruby-version: "3.2"
+          bundler-cache: true
+      - name: Install system dependencies
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y vim-gtk3 exuberant-ctags xvfb
+      - name: Show tool versions
+        run: |
+          vim --version | head -n 3
+          ctags --version | head -n 2
+          bundle exec rspec --version
       - name: Run tests
+        run: sh spec/run.sh
+
+  docker-test:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Docker smoke test
         run: sh run-test.sh

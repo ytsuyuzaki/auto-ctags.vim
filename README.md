@@ -2,7 +2,7 @@
 
 run the ctags command
 
-[![Build Status](https://travis-ci.org/soramugi/auto-ctags.vim.png?branch=master)](https://travis-ci.org/soramugi/auto-ctags.vim)
+[![Test](https://github.com/ytsuyuzaki/auto-ctags.vim/actions/workflows/test.yml/badge.svg)](https://github.com/ytsuyuzaki/auto-ctags.vim/actions/workflows/test.yml)
 
 ## Usage
 
@@ -71,7 +71,16 @@ Show all warning messages only once, default `0`
 
 ## Testing
 
-Please install `docker`
+Install dependencies for direct local execution:
+
+    bundle install
+    sudo apt-get install vim-gtk3 exuberant-ctags xvfb
+
+Run tests directly:
+
+    sh spec/run.sh
+
+Run tests in Docker:
 
     sh run-test.sh
 
