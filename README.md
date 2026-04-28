@@ -78,7 +78,7 @@ Install dependencies for direct local execution:
 
 Run tests directly:
 
-    sh spec/run.sh
+    bash spec/run.sh
 
 Run tests in Docker:
 

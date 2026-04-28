@@ -26,7 +26,7 @@ jobs:
           ctags --version | head -n 2
           bundle exec rspec --version
       - name: Run tests
-        run: sh spec/run.sh
+        run: bash spec/run.sh
 
   docker-test:
     runs-on: ubuntu-latest
