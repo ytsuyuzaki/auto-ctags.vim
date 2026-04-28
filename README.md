@@ -82,7 +82,7 @@ Run tests directly:
 
 Run tests in Docker:
 
-    sh run-test.sh
+    bash run-test.sh
 
 ## Policy
 * Created in the current directory by default

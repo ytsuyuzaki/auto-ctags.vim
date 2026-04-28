@@ -33,4 +33,4 @@ jobs:
     steps:
       - uses: actions/checkout@v4
       - name: Docker smoke test
-        run: sh run-test.sh
+        run: bash run-test.sh
