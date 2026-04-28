@@ -12,5 +12,3 @@ WORKDIR /vim-test
 COPY Gemfile .
 COPY Gemfile.lock .
 RUN bundle install
-
-ENV DISPLAY :99.0
